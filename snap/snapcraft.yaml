@@ -1,0 +1,21 @@
+name: go-hello-world
+base: core22
+version: "0.1"
+summary: Golang hello world
+description: |
+  Hello world in go
+
+grade: devel
+confinement: devmode
+
+apps:
+  go-hello-world:
+    command: bin/helloworld # binary name defaults to Go package name
+
+parts:
+  hello-world:
+    plugin: go
+    source-type: local
+    source: .
+    build-snaps:
+      - go
