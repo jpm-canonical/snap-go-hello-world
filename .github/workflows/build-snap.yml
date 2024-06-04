@@ -3,9 +3,9 @@ run-name: ${{ github.actor }} is building a snap
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
   # Allow manual trigger
   workflow_dispatch:
 
