@@ -18,8 +18,8 @@ jobs:
 
     - name: Branch name
       env:
-        - PR_NR: ${{ github.event.pull_request.number }}
-        - EV_NR: ${{ github.event.number }}
+        PR_NR: ${{ github.event.pull_request.number }}
+        EV_NR: ${{ github.event.number }}
       run: |
         echo "GITHUB_REF=${GITHUB_REF}"
         echo "GITHUB_HEAD_REF=${GITHUB_HEAD_REF}"
