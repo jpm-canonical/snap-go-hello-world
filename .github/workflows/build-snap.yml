@@ -16,6 +16,16 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
+    - name: Branch name
+      env:
+        - PR_NR: ${{ github.event.pull_request.number }}
+        - EV_NR: ${{ github.event.number }}
+      run: |
+        echo "GITHUB_REF=${GITHUB_REF}"
+        echo "GITHUB_HEAD_REF=${GITHUB_HEAD_REF}"
+        echo "PR_NR=${PR_NR}"
+        echo "EV_NR=${EV_NR}"
+
     - name: Build snap
       uses: snapcore/action-build@v1
       id: snapcraft
